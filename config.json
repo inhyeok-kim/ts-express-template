@@ -1,0 +1,12 @@
+{
+    "server" : {
+        "port" : 3000
+    },
+    "context" : {
+        "useFilter" : false
+    },
+    "logging" : {
+        "setup"  : false,
+        "query" : true
+    }
+}

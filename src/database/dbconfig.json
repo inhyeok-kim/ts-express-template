@@ -1,0 +1,8 @@
+{
+    "dbType" : "mssql", 
+    "user": "dbadmin",
+    "password": "!Aekdnlt1",
+    "server": "ihk-tds.database.windows.net",
+    "database": "tdb",
+    "poolSize" : 1
+}

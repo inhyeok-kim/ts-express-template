@@ -4,6 +4,7 @@ import path from 'path';
 import config from '../../config.json';
 
 export default function ControllerLoader(app : Express){
+  
   if(config.logging.setup){
     console.log('Controller Loading Started.....');
   }

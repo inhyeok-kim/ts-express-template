@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "ES2016",
     "module": "commonjs",
     "outDir": "dist",
-    "sourceMap": false,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "resolveJsonModule" : true
+    "resolveJsonModule" : true,
+    "skipLibCheck": true
   },
   "include": [
-    "src/*","app.ts","config.json"
+    "package.json","src","app.ts"
   ],
   "exclude": [
       "node_modules"

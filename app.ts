@@ -8,18 +8,26 @@ import cors from 'cors';
 import ControllerLoader from './src/common/ControllerLoader';
 import config from './config.json';
 import Authenticate from './src/mwares/Authenticate';
-import {MybatisMapperLoader} from './src/database/mappers/MybatisLoader';
+import {MybatisMapperLoader} from './src/database/MybatisLoader';
+import expressSession from 'express-session';
 const app = express();
 
 // base middleware
-app.use(helmet);
+app.use(helmet());
 app.use(cors());
-
 const limiter = rateLimit({ // 쓰로틀링
     windowMs : 1000,
     max : 1
 });
 app.use(limiter);
+
+app.use(expressSession({
+    name : "sid",
+    secret : "@RE$#fdw23@",
+    saveUninitialized : true,
+    resave : false,
+    unset : "destroy"
+}));
 
 app.use('/static',express.static('public'));
 app.use(bodyParser.urlencoded({extends:true} as OptionsUrlencoded));
